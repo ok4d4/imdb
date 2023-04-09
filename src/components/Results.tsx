@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Results({ results }) {
+export default function Results({ results }: { results: any[] }) {
   return (
     <div>
       {results.map((result) => (
