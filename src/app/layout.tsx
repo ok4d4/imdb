@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import Providers from "./Providers";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "開発中",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Header />
+          <Navbar />
           {children}
         </Providers>
       </body>
