@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-async function getMovie(movieId) {
+type paramsType = {
+  id: string;
+};
+
+async function getMovie(movieId: string) {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`,
     { next: { revalidate: 10000 } }
@@ -10,7 +14,7 @@ async function getMovie(movieId) {
   return movie;
 }
 
-export default async function MoviePage({ params }) {
+export default async function MoviePage({ params }: { params: paramsType }) {
   const movieId = params.id;
   const movie = await getMovie(movieId);
   //   console.log(movie);
